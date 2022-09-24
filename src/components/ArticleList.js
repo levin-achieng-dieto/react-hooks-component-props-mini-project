@@ -1,11 +1,13 @@
 import React from "react";
 import Article from "./Article";
 
-function ArticleList({props}){
+function ArticleList({posts}){
     
     return (
         <main>
-            <Article />
+            {posts.map((post) => { return ( 
+            <Article key={post.id} title={post.title} date={post.date} preview={post.preview} />
+            )})}
         </main>
     )
 }
